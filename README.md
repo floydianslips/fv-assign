@@ -11,4 +11,7 @@
 ### 2. As a user, I want to have the ability to merge my information into the database because I have included information that is not currently present in the database.
 ### 3. As a user, I want to be able to easily verify that the information in the database is accurate because if it is not I have the ability fix it.
 
+## Screenshots
+
+!["Search Bar"](https://github.com/floydianslips/fv-assign/blob/master/docs/Search.png?raw=true)
 !["Options"](https://github.com/floydianslips/fv-assign/blob/master/docs/Merge%20Component.png?raw=true)
