@@ -74,6 +74,7 @@ export default class  WordMerge extends Component {
       // If word entered in form is not found alert user the word is not in the database.
       if (!sameWord.size > 0) {
         alert('The word you entered was not found');
+        this.cancelWordEntry();
       } else { this.mergeSameWord() }
     })
     .catch((error) => {
@@ -91,33 +92,13 @@ export default class  WordMerge extends Component {
     this.setState({ modalShow: false });
   }
 
-  // If user wants to select the first entry data this button saves that data. REFACTOR THE NEXT THREE FUNCTIONS
-  handleFirstChoiceClick = () => {
+  // Determine option user wants and set state with correct data
+  handleChoiceClick = (typeOfClick) => {
     const addToWordElements = this.state.elementsThatAreTheSame;
     const removeWordElement = this.state.elementsThatAreDifferent;
-    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.firstChoice));
-    removeWordElement.delete(this.state.objectKey);
-    this.handleClose();
-    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
-    this.userMergeChoices();
-  }
-
-  // Save second entry data
-  handleSecondChoiceClick = () => {
-    const addToWordElements = this.state.elementsThatAreTheSame;
-    const removeWordElement = this.state.elementsThatAreDifferent;
-    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.secondChoice));
-    removeWordElement.delete(this.state.objectKey);
-    this.handleClose();
-    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
-    this.userMergeChoices();
-  }
-
-  // Merge both data sets
-  handleMergeClick = () => {
-    const addToWordElements = this.state.elementsThatAreTheSame;
-    const removeWordElement = this.state.elementsThatAreDifferent;
-    addToWordElements.set(this.state.objectKey, [JSON.parse(this.state.secondChoice), JSON.parse(this.state.firstChoice)]);
+    if (typeOfClick === 'merge') {
+      addToWordElements.set(this.state.objectKey, [JSON.parse(this.state.secondChoice), JSON.parse(this.state.firstChoice)])
+    } else { addToWordElements.set(this.state.objectKey, JSON.parse(this.state[typeOfClick])) }
     removeWordElement.delete(this.state.objectKey);
     this.handleClose();
     this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
@@ -151,9 +132,7 @@ export default class  WordMerge extends Component {
     return (
       <>
         <WordMergeModal
-          mergeChoice={ this.handleMergeClick }
-          secondChoiceClick={ this.handleSecondChoiceClick }
-          firstChoiceClick={ this.handleFirstChoiceClick }
+          handleChoiceClick={ this.handleChoiceClick }
           handleClose={ this.handleClose }
           objectKey={ this.state.objectKey }
           firstChoice={ this.state.firstChoice }
