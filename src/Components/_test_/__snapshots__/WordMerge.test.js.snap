@@ -1,0 +1,550 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WordMerge />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <WordMergeModal
+          firstChoice=""
+          firstChoiceClick={[Function]}
+          handleClose={[Function]}
+          mergeChoice={[Function]}
+          objectKey=""
+          secondChoice=""
+          secondChoiceClick={[Function]}
+          show={false}
+        />,
+        <form
+          id="wordSearch"
+          onSubmit={[Function]}
+        >
+          <label>
+            Word:
+            <input
+              id="wordInput"
+              name="name"
+              onChange={[Function]}
+              type="text"
+            />
+          </label>
+          <input
+            onClick={[Function]}
+            type="submit"
+            value="Submit"
+          />
+        </form>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "firstChoice": "",
+          "firstChoiceClick": [Function],
+          "handleClose": [Function],
+          "mergeChoice": [Function],
+          "objectKey": "",
+          "secondChoice": "",
+          "secondChoiceClick": [Function],
+          "show": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Word:
+              <input
+                id="wordInput"
+                name="name"
+                onChange={[Function]}
+                type="text"
+              />
+            </label>,
+            <input
+              onClick={[Function]}
+              type="submit"
+              value="Submit"
+            />,
+          ],
+          "id": "wordSearch",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Word:",
+                <input
+                  id="wordInput"
+                  name="name"
+                  onChange={[Function]}
+                  type="text"
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Word:",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "id": "wordInput",
+                  "name": "name",
+                  "onChange": [Function],
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "onClick": [Function],
+              "type": "submit",
+              "value": "Submit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <WordMergeModal
+            firstChoice=""
+            firstChoiceClick={[Function]}
+            handleClose={[Function]}
+            mergeChoice={[Function]}
+            objectKey=""
+            secondChoice=""
+            secondChoiceClick={[Function]}
+            show={false}
+          />,
+          <form
+            id="wordSearch"
+            onSubmit={[Function]}
+          >
+            <label>
+              Word:
+              <input
+                id="wordInput"
+                name="name"
+                onChange={[Function]}
+                type="text"
+              />
+            </label>
+            <input
+              onClick={[Function]}
+              type="submit"
+              value="Submit"
+            />
+          </form>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "firstChoice": "",
+            "firstChoiceClick": [Function],
+            "handleClose": [Function],
+            "mergeChoice": [Function],
+            "objectKey": "",
+            "secondChoice": "",
+            "secondChoiceClick": [Function],
+            "show": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Word:
+                <input
+                  id="wordInput"
+                  name="name"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </label>,
+              <input
+                onClick={[Function]}
+                type="submit"
+                value="Submit"
+              />,
+            ],
+            "id": "wordSearch",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Word:",
+                  <input
+                    id="wordInput"
+                    name="name"
+                    onChange={[Function]}
+                    type="text"
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Word:",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "id": "wordInput",
+                    "name": "name",
+                    "onChange": [Function],
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "onClick": [Function],
+                "type": "submit",
+                "value": "Submit",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`renders correctly 2`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "id": "wordSearch",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "Word:",
+            "next": Object {
+              "attribs": Object {
+                "id": "wordInput",
+                "name": "name",
+                "type": "text",
+              },
+              "children": Array [],
+              "name": "input",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "id": undefined,
+                "name": undefined,
+                "type": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "id": undefined,
+                "name": undefined,
+                "type": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+          Object {
+            "attribs": Object {
+              "id": "wordInput",
+              "name": "name",
+              "type": "text",
+            },
+            "children": Array [],
+            "name": "input",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "data": "Word:",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "id": undefined,
+              "name": undefined,
+              "type": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "id": undefined,
+              "name": undefined,
+              "type": undefined,
+            },
+          },
+        ],
+        "name": "label",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "type": "submit",
+            "value": "Submit",
+          },
+          "children": Array [],
+          "name": "input",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "type": undefined,
+            "value": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "type": undefined,
+            "value": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+      Object {
+        "attribs": Object {
+          "type": "submit",
+          "value": "Submit",
+        },
+        "children": Array [],
+        "name": "input",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "Word:",
+              "next": Object {
+                "attribs": Object {
+                  "id": "wordInput",
+                  "name": "name",
+                  "type": "text",
+                },
+                "children": Array [],
+                "name": "input",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "id": undefined,
+                  "name": undefined,
+                  "type": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "id": undefined,
+                  "name": undefined,
+                  "type": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+            Object {
+              "attribs": Object {
+                "id": "wordInput",
+                "name": "name",
+                "type": "text",
+              },
+              "children": Array [],
+              "name": "input",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "data": "Word:",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "id": undefined,
+                "name": undefined,
+                "type": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "id": undefined,
+                "name": undefined,
+                "type": undefined,
+              },
+            },
+          ],
+          "name": "label",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "type": undefined,
+          "value": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "type": undefined,
+          "value": undefined,
+        },
+      },
+    ],
+    "name": "form",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "id": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "id": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;

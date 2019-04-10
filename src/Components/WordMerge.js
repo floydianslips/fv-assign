@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import WordMergeModal from '../Helpers/WordMergeModal'
+import WordMergeModal from '../Helpers/WordMergeModal';
 
 export default class  WordMerge extends Component {
   constructor() {
     super();
     this.state = {
-      wordsUrl: "https://pznmh01oo9.execute-api.ca-central-1.amazonaws.com/dev/test-merge-two-records",
+      wordsUrl: 'https://pznmh01oo9.execute-api.ca-central-1.amazonaws.com/dev/test-merge-two-records',
       wordsThatAreTheSame: new Map(),
       elementsThatAreTheSame: new Map(),
       elementsThatAreDifferent: new Map(),
@@ -16,7 +16,7 @@ export default class  WordMerge extends Component {
       firstChoice: "",
       secondChoice: "",
       word: ""
-    }
+    };
   }
 
   // Get differences between two entries for user to select one entry or merge
@@ -24,18 +24,17 @@ export default class  WordMerge extends Component {
     const differentElements = this.state.elementsThatAreDifferent;
     if (differentElements.size > 0) {
       for (let [key, value] of differentElements) {
-      this.setState({ objectKey: key, firstChoice: JSON.stringify(value[0]), secondChoice: JSON.stringify(value[1]), modalShow: true })
-      }
+      this.setState({ objectKey: key, firstChoice: JSON.stringify(value[0]), secondChoice: JSON.stringify(value[1]), modalShow: true });
+      };
     } else {
       // Set the alert to view new word entry
       let newWordEntry = [];
       for (let [key, value] of this.state.elementsThatAreTheSame) {
-        console.log("key", key, "value", value)
-        newWordEntry.push(`${key}: ${JSON.stringify(value)}`)
-      }
-      this.cancelWordEntry()
+        newWordEntry.push(`${key}: ${JSON.stringify(value)}`);
+      };
+      this.cancelWordEntry();
       alert(newWordEntry.join("\n"));
-    }
+    };
   }
 
   // Split entries into two maps, one with elements that are the same and one with elements that are different. Set state using these maps
@@ -47,14 +46,14 @@ export default class  WordMerge extends Component {
     const word2 = sameWords.get(1);
     for (let key in word1) {
       if (word1[key] !== word2[key]) {
-        newWordEntry.set([key], [word1[key], word2[key]])
+        newWordEntry.set([key], [word1[key], word2[key]]);
       }
       if (word1[key] === word2[key]) {
-        oldWordEntry.set([key], word1[key])
+        oldWordEntry.set([key], word1[key]);
       }
     }
-    this.setState({ elementsThatAreDifferent: newWordEntry, elementsThatAreTheSame: oldWordEntry })
-    this.userMergeChoices()
+    this.setState({ elementsThatAreDifferent: newWordEntry, elementsThatAreTheSame: oldWordEntry });
+    this.userMergeChoices();
   }
 
   // Get entries and pull out entries that are for the same words.
@@ -66,15 +65,15 @@ export default class  WordMerge extends Component {
       data.forEach((element, i) => {
         if (element.word === this.state.word) {
           sameWord.set(i, element)
-        }
-      })
+        };
+      });
       // Set the state using the duplicate entries
       this.setState({ wordsThatAreTheSame: sameWord });
     })
     .then(() => {
       // If word entered in form is not found alert user the word is not in the database.
       if (!sameWord.size > 0) {
-        alert("The word you entered was not found")
+        alert('The word you entered was not found');
       } else { this.mergeSameWord() }
     })
     .catch((error) => {
@@ -94,40 +93,40 @@ export default class  WordMerge extends Component {
 
   // If user wants to select the first entry data this button saves that data. REFACTOR THE NEXT THREE FUNCTIONS
   handleFirstChoiceClick = () => {
-    const addToWordElements = this.state.elementsThatAreTheSame
-    const removeWordElement = this.state.elementsThatAreDifferent
-    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.firstChoice))
-    removeWordElement.delete(this.state.objectKey)
-    this.handleClose()
-    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements })
-    this.userMergeChoices()
+    const addToWordElements = this.state.elementsThatAreTheSame;
+    const removeWordElement = this.state.elementsThatAreDifferent;
+    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.firstChoice));
+    removeWordElement.delete(this.state.objectKey);
+    this.handleClose();
+    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
+    this.userMergeChoices();
   }
 
   // Save second entry data
   handleSecondChoiceClick = () => {
-    const addToWordElements = this.state.elementsThatAreTheSame
-    const removeWordElement = this.state.elementsThatAreDifferent
-    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.secondChoice))
-    removeWordElement.delete(this.state.objectKey)
-    this.handleClose()
-    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements })
-    this.userMergeChoices()
+    const addToWordElements = this.state.elementsThatAreTheSame;
+    const removeWordElement = this.state.elementsThatAreDifferent;
+    addToWordElements.set(this.state.objectKey, JSON.parse(this.state.secondChoice));
+    removeWordElement.delete(this.state.objectKey);
+    this.handleClose();
+    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
+    this.userMergeChoices();
   }
 
   // Merge both data sets
   handleMergeClick = () => {
-    const addToWordElements = this.state.elementsThatAreTheSame
-    const removeWordElement = this.state.elementsThatAreDifferent
-    addToWordElements.set(this.state.objectKey, [JSON.parse(this.state.secondChoice), JSON.parse(this.state.firstChoice)])
-    removeWordElement.delete(this.state.objectKey)
-    this.handleClose()
-    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements })
-    this.userMergeChoices()
+    const addToWordElements = this.state.elementsThatAreTheSame;
+    const removeWordElement = this.state.elementsThatAreDifferent;
+    addToWordElements.set(this.state.objectKey, [JSON.parse(this.state.secondChoice), JSON.parse(this.state.firstChoice)]);
+    removeWordElement.delete(this.state.objectKey);
+    this.handleClose();
+    this.setState({ elementsThatAreDifferent: removeWordElement, elementsThatAreTheSame: addToWordElements });
+    this.userMergeChoices();
   }
 
   // Set word that is to be looked up on change in form field
   handleInputChange = ({ target }) => {
-    this.setState({word: target.value})
+    this.setState({ word: target.value });
   }
 
   // Handle form submit
@@ -139,7 +138,7 @@ export default class  WordMerge extends Component {
   // When enter is pressed handle the submit
   handleEnter = (e) => {
     if(e.key === 'Enter'){
-      this.handleSubmit()
+      this.handleSubmit();
     }
   }
 
